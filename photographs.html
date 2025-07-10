@@ -5,6 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Photographs - Salim Moshe</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Gallery specific styles */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    /* Lightbox Styles */
+    .lightbox {
+      display: none; /* Hidden by default */
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      z-index: 1000;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -15,23 +55,21 @@
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="projects.html">Projects</a></li>
-      <li><a href="photographs.html">Photographs</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="photographs.html" aria-current="page">Photographs</a></li>
     </ul>
   </nav>
 
   <main>
     <h2>Gallery</h2>
-    <p>A selection of my favorite shots capturing moments, light, and life.</p>
-
     <div class="gallery">
-      <img src="images/bus.jpg" alt="The Bus" onclick="openLightbox(this)" />
+      <img src="images/bus.jpg" alt="The bus" onclick="openLightbox(this)" />
       <img src="images/self.jpg" alt="Reflection" onclick="openLightbox(this)" />
       <img src="images/Red.jpg" alt="Diffraction" onclick="openLightbox(this)" />
       <img src="images/flower.jpg" alt="Flower" onclick="openLightbox(this)" />
       <img src="images/520.jpg" alt="520" onclick="openLightbox(this)" />
       <img src="images/Shadow.jpg" alt="Shadow" onclick="openLightbox(this)" />
       <img src="images/Light.jpg" alt="Light" onclick="openLightbox(this)" />
+      <!-- Add more photos if you want -->
     </div>
   </main>
 
@@ -43,6 +81,17 @@
     <p>&copy; 2025 Salim Moshe. All rights reserved.</p>
   </footer>
 
-  <script src="scripts.js"></script>
+  <script>
+    function openLightbox(img) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightbox.style.display = 'flex';
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
