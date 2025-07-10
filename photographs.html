@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photographs</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>My Photographs</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">Projects</a></li>
+      <li><a href="photographs.html">Photographs</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Gallery</h2>
+    <div class="gallery">
+
+ 	<img src="images/bus.jpg" alt="The bus" onclick="openLightbox(this)">
+      <img src="images/self.jpg" alt="Reflection" onclick="openLightbox(this)">
+	<img src="images/Red.jpg" alt="Defraction" onclick="openLightbox(this)">
+      <img src="images/flower.jpg" alt="Defraction" onclick="openLightbox(this)">
+      <img src="images/520.jpg" alt="520" onclick="openLightbox(this)">
+      <img src="images/Shadow.jpg" alt="Shadow" onclick="openLightbox(this)">
+	<img src="images/Light.jpg" alt="Light" onclick="openLightbox(this)">
+      <!-- Add more photos as needed -->
+    </div>
+  </main>
+
+  <!-- Fullscreen Lightbox Container -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Fullscreen Photo">
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Simple Website Co. All rights reserved.</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
