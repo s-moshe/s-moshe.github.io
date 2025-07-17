@@ -105,6 +105,14 @@
             <li>Enabled item listing management: users can create, view, and delete their own listings.</li>
             <li>Focused on a clean and intuitive UI for smooth user experience on both Android and iOS devices.</li>
           </ul>
+
+          <div class="gallery">
+            <img src="images/home.jpg" alt="Home page" onclick="openLightbox(this)" />
+            <img src="images/login.jpg" alt="Login page" onclick="openLightbox(this)" />
+            <img src="images/ask gemini.jpg" alt="Ask gemini" onclick="openLightbox(this)" />
+            <img src="images/description gemini.jpg" alt="Description gemini" onclick="openLightbox(this)" />
+          </div>
+          🔗 <a href="https://github.com/s-moshe/Dawgdealz" target="_blank" rel="noopener noreferrer">View Project Repo</a>
         </div>
       </li>
       <li class="project-item">
@@ -123,8 +131,14 @@
     </ul>
   </main>
 
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Fullscreen Project Image" />
+  </div>
+
   <footer>
     <p>&copy; 2025 Salim Moshe. All rights reserved.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
